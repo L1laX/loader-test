@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  app:
+    build: .
+    expose:
+      - "8080" # Expose port 8080 internally (no host binding)
+    volumes:
+      - ./api:/app/api # Mount the api/ directory for hot reloading
+    depends_on:
+      - redis
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - app
