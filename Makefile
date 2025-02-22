@@ -1,8 +1,8 @@
 start:
 	docker compose up -d
 
-start-5:
-	docker compose up -d --scale=5
+start5:
+	docker compose up -d --scale app=5
 
 down:
 	docker compose down
@@ -10,5 +10,5 @@ down:
 rebuild:
 	docker compose up --build -d
 
-test:
+testk6:
 	k6 run ./test/k6.js
