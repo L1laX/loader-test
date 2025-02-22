@@ -4,6 +4,10 @@ services:
     build: .
     expose:
       - "8080" # Expose port 8080 internally (no host binding)
+    ulimits:
+      nofile:
+        soft: 1000000
+        hard: 1000000
     volumes:
       - ./api:/app/api # Mount the api/ directory for hot reloading
     depends_on:

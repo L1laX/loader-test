@@ -1,22 +1,25 @@
+Flow Chart
+https://drive.google.com/file/d/1C916HYWTlRrUVqA1aFF-P_N9DT6Sl_UP/view?usp=sharing
+
 File Structure
 
 project-root/
 │
-├── api/                     # Backend Service (Golang + Gin)
-│   ├── main.go              # Main application file
-│   ├── go.mod               # Go module file
-│   └── go.sum               # Go dependencies lock file
+├── api/ # Backend Service (Golang + Gin)
+│ ├── main.go # Main application file
+│ ├── go.mod # Go module file
+│ └── go.sum # Go dependencies lock file
 │
-├── nginx/                   # NGINX Configuration
-│   └── nginx.conf           # NGINX configuration for load balancing
+├── nginx/ # NGINX Configuration
+│ └── nginx.conf # NGINX configuration for load balancing
 │
-├── test/                    # Load Testing Scripts
-│   └── k6.js                # k6 script for simulating high loads
+├── test/ # Load Testing Scripts
+│ └── k6.js # k6 script for simulating high loads
 │
-├── docker-compose.yml       # Docker Compose file to orchestrate services
-├── Dockerfile               # Dockerfile for building the Golang app
-├── Makefile                 # Makefile for common commands
-└── README.md                # Documentation
+├── docker-compose.yml # Docker Compose file to orchestrate services
+├── Dockerfile # Dockerfile for building the Golang app
+├── Makefile # Makefile for common commands
+└── README.md # Documentation
 
 1. Start the Application
 
@@ -38,12 +41,9 @@ Stop the Application
 To stop all running containers:
 make down
 
-
 2. Test the Application
-Manual Testing
-You can manually test the API using curl:
-
-
+   Manual Testing
+   You can manually test the API using curl:
 
 Run the k6 script to simulate high loads:
 : make test
